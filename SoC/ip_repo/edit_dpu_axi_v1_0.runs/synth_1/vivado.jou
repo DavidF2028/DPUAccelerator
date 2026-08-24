@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Thu Aug 20 23:00:08 2026
+# Process ID         : 6620
+# Current directory  : C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1
+# Command line       : vivado.exe -log dpu_axi.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dpu_axi.tcl
+# Log file           : C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1/dpu_axi.vds
+# Journal file       : C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-LAL0689
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
+# CPU Frequency      : 3696 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 20
+# Host memory        : 68611 MB
+# Swap memory        : 10200 MB
+# Total Virtual      : 78811 MB
+# Available Virtual  : 53481 MB
+#-----------------------------------------------------------
+source dpu_axi.tcl -notrace

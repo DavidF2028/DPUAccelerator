@@ -1,0 +1,97 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Aug 19 03:50:23 2026
+# Process ID         : 30072
+# Current directory  : C:/Users/Admin/ip_repo
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent2752 C:\Users\Admin\ip_repo\edit_dpu_axi_v1_0.xpr
+# Log file           : C:/Users/Admin/ip_repo/vivado.log
+# Journal file       : C:/Users/Admin/ip_repo\vivado.jou
+# Running On         : DESKTOP-LAL0689
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
+# CPU Frequency      : 3696 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 20
+# Host memory        : 68611 MB
+# Swap memory        : 10200 MB
+# Total Virtual      : 78811 MB
+# Available Virtual  : 46459 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/bd/design_1/design_1.bd}
+ipx::open_ipxact_file C:/Users/Admin/ip_repo/component.xml
+set_property description 99999985 [ipx::get_bus_parameters FREQ_HZ -of_objects [ipx::get_bus_interfaces s00_axi_aclk -of_objects [ipx::current_core]]]
+set_property supported_families {zynquplus Beta zynq Beta} [ipx::current_core]
+set_property is_include true [ipx::get_files dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files dpu_axi_1_0/hdl/dpu_axi.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files dpu_axi_1_0/hdl/dpu_axi.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include false [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include false [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include false [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include false [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include true [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property is_include false [ipx::get_files xgui/dpu_axi_v1_3.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]]
+set_property core_revision 11 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/Admin/ip_repo
+set_property board_part realdigital.org:aup-zu3-8gb:part0:1.0 [current_project]
+set_property version 1.4 [ipx::current_core]
+set_property display_name dpu_axi_v1_4 [ipx::current_core]
+set_property description {wrapper for systolic array DPU v4} [ipx::current_core]
+set_property core_revision 12 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/Admin/ip_repo
+set_property description 100000000 [ipx::get_bus_parameters FREQ_HZ -of_objects [ipx::get_bus_interfaces s00_axi_aclk -of_objects [ipx::current_core]]]
+set_property core_revision 13 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/Admin/ip_repo
+ipx::add_bus_parameter FREQ_TOLERANCE_HZ [ipx::get_bus_interfaces s00_axi_aclk -of_objects [ipx::current_core]]
+ipx::remove_bus_parameter FREQ_TOLERANCE_HZ [ipx::get_bus_interfaces s00_axi_aclk -of_objects [ipx::current_core]]
+set_property core_revision 14 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/Admin/ip_repo
+get_property CONFIG.FREQ_HZ [get_bd_pins dpu_axi_0/s00_axi_aclk]
+set_property version 1.5 [ipx::current_core]
+set_property display_name dpu_axi_v1_5 [ipx::current_core]
+set_property description {wrapper for systolic array DPU v5} [ipx::current_core]
+set_property core_revision 15 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/Admin/ip_repo

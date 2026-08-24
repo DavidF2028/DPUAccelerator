@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon Jul 27 21:43:35 2026
+# Process ID         : 18972
+# Current directory  : C:/Users/Admin/ip_repo
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent18596 C:\Users\Admin\ip_repo\edit_dpu_axi_v1_0.xpr
+# Log file           : C:/Users/Admin/ip_repo/vivado.log
+# Journal file       : C:/Users/Admin/ip_repo\vivado.jou
+# Running On         : DESKTOP-LAL0689
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
+# CPU Frequency      : 3696 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 20
+# Host memory        : 68611 MB
+# Swap memory        : 10200 MB
+# Total Virtual      : 78811 MB
+# Available Virtual  : 59849 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.xpr
+update_compile_order -fileset sources_1

@@ -1,0 +1,513 @@
+
+*** Running vivado
+    with args -log dpu_axi.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dpu_axi.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sat Aug  8 17:52:03 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source dpu_axi.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Admin/ip_repo'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/Users/Admin/ip_repo' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'c:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1'.)
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Admin/DPU/DPU.srcs/sources_1/ip/dpu_axi_1'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+Command: synth_design -top dpu_axi -part xczu3eg-sfvc784-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 10664
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1089.684 ; gain = 492.551
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'status_reg' is used before its declaration [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:367]
+INFO: [Synth 8-6157] synthesizing module 'dpu_axi' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dpu_axi_slave_lite_v1_0_S00_AXI' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:160]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:332]
+INFO: [Synth 8-6157] synthesizing module 'DPU_Top' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DPUCore' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'MACArray' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'MACUnit' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MACUnit' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'MACArray' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'DPUCore' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:170]
+INFO: [Synth 8-6157] synthesizing module 'ActivationSelect' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv:2]
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ActivationSelect' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'DPU_Top' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'dpu_axi_slave_lite_v1_0_S00_AXI' (0#1) [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:4]
+WARNING: [Synth 8-7071] port 'in_bram_en' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'in_bram_addr' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'in_bram_dout' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'w_bram_en' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'w_bram_addr' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'w_bram_dout' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'out_bram_en' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'out_bram_we' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'out_bram_addr' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7071] port 'out_bram_din' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' is unconnected for instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+WARNING: [Synth 8-7023] instance 'dpu_axi_slave_lite_v1_0_S00_AXI_inst' of module 'dpu_axi_slave_lite_v1_0_S00_AXI' has 31 connections declared, but only 21 given [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'dpu_axi' (0#1) [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:4]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:227]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:228]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:229]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:230]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:231]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:232]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:233]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:234]
+WARNING: [Synth 8-7129] Port clock in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1208.227 ; gain = 611.094
+---------------------------------------------------------------------------------
+
+*** Running vivado
+    with args -log dpu_axi.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dpu_axi.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Thu Aug 20 23:00:08 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source dpu_axi.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Admin/ip_repo'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/Users/Admin/ip_repo' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'c:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1'.)
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Admin/DPU/DPU.srcs/sources_1/ip/dpu_axi_1'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.1/Vivado/data/ip'.
+Command: synth_design -top dpu_axi -part xczu3eg-sfvc784-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 304
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1010.648 ; gain = 491.270
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'status_reg' is used before its declaration [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:367]
+INFO: [Synth 8-6157] synthesizing module 'dpu_axi' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dpu_axi_slave_lite_v1_0_S00_AXI' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:160]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:332]
+INFO: [Synth 8-6157] synthesizing module 'DPU_Top' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'DPUCore' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'MACArray' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'MACUnit' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv:2]
+	Parameter bitSize bound to: 8 - type: integer 
+	Parameter accSize bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MACUnit' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/PEUnit.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'MACArray' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/MACArray.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'DPUCore' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DpuCore.sv:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:170]
+INFO: [Synth 8-6157] synthesizing module 'ActivationSelect' [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv:2]
+	Parameter accSize bound to: 20 - type: integer 
+	Parameter arraySize bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ActivationSelect' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/ActivationSelect.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'DPU_Top' (0#1) [C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.srcs/sources_1/imports/DPU/DPU_Top.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'dpu_axi_slave_lite_v1_0_S00_AXI' (0#1) [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:4]
+WARNING: [Synth 8-689] width (13) of port connection 'in_bram_addr' does not match port width (8) of module 'dpu_axi_slave_lite_v1_0_S00_AXI' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:84]
+WARNING: [Synth 8-689] width (13) of port connection 'w_bram_addr' does not match port width (8) of module 'dpu_axi_slave_lite_v1_0_S00_AXI' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:88]
+WARNING: [Synth 8-689] width (11) of port connection 'out_bram_addr' does not match port width (8) of module 'dpu_axi_slave_lite_v1_0_S00_AXI' [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'dpu_axi' (0#1) [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi.v:4]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:227]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:228]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:229]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:230]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg5_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:231]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg6_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:232]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg7_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:233]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [C:/Users/Admin/ip_repo/dpu_axi_1_0/hdl/dpu_axi_slave_lite_v1_0_S00_AXI.v:234]
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[12] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[11] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[12] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[11] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module dpu_axi_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1130.816 ; gain = 611.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1130.816 ; gain = 611.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sfvc784-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu3eg-sfvc784-2-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1130.816 ; gain = 611.438
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DPU_Top'
+INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'dpu_axi_slave_lite_v1_0_S00_AXI'
+INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'dpu_axi_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               01 |                               00
+                 COMPUTE |                               11 |                               01
+            WRITE_OUTPUT |                               10 |                               10
+                   READY |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'DPU_Top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Waddr |                               01 |                               10
+                   Wdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using encoding 'sequential' in module 'dpu_axi_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Raddr |                               01 |                               10
+                   Rdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'dpu_axi_slave_lite_v1_0_S00_AXI'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1141.148 ; gain = 621.770
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 64    
+	                8 Bit    Registers := 128   
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 3     
+	  10 Input   32 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 256   
+	   4 Input   20 Bit        Muxes := 64    
+	   2 Input    8 Bit        Muxes := 128   
+	   4 Input    6 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 3     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 6     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 69    
+	   4 Input    1 Bit        Muxes := 9     
+	   3 Input    1 Bit        Muxes := 13    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[12] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[11] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[7] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[6] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port in_bram_addr[5] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[12] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[11] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[7] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[6] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port w_bram_addr[5] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[10] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[9] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[8] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[7] driven by constant 0
+WARNING: [Synth 8-3917] design dpu_axi has port out_bram_addr[6] driven by constant 0
+WARNING: [Synth 8-7129] Port clock in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module ActivationSelect is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[2] in module dpu_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[1] in module dpu_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_awprot[0] in module dpu_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[2] in module dpu_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[1] in module dpu_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s00_axi_arprot[0] in module dpu_axi is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1937.180 ; gain = 1417.801
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1944.980 ; gain = 1425.602
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1967.020 ; gain = 1447.641
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY8 |   704|
+|3     |LUT1   |    29|
+|4     |LUT2   |  1485|
+|5     |LUT3   |   782|
+|6     |LUT4   |  4556|
+|7     |LUT5   |  2944|
+|8     |LUT6   |  2412|
+|9     |MUXF7  |   306|
+|10    |MUXF8  |   152|
+|11    |FDCE   |  2224|
+|12    |FDPE   |    28|
+|13    |FDRE   |   125|
+|14    |IBUF   |   179|
+|15    |OBUF   |   117|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------------------------+--------------------------------+------+
+|      |Instance                                  |Module                          |Cells |
++------+------------------------------------------+--------------------------------+------+
+|1     |top                                       |                                | 16044|
+|2     |  dpu_axi_slave_lite_v1_0_S00_AXI_inst    |dpu_axi_slave_lite_v1_0_S00_AXI | 15747|
+|3     |    dpu_inst                              |DPU_Top                         | 15571|
+|4     |      activation_unit                     |ActivationSelect                |  2501|
+|5     |      core_TL                             |DPUCore                         | 12922|
+|6     |        core                              |MACArray                        | 12922|
+|7     |          \genblk3[0].genblk1[0].macUnit  |MACUnit                         |   498|
+|8     |          \genblk3[0].genblk1[1].macUnit  |MACUnit_0                       |   325|
+|9     |          \genblk3[0].genblk1[2].macUnit  |MACUnit_1                       |   328|
+|10    |          \genblk3[0].genblk1[3].macUnit  |MACUnit_2                       |   325|
+|11    |          \genblk3[0].genblk1[4].macUnit  |MACUnit_3                       |   326|
+|12    |          \genblk3[0].genblk1[5].macUnit  |MACUnit_4                       |   325|
+|13    |          \genblk3[0].genblk1[6].macUnit  |MACUnit_5                       |   319|
+|14    |          \genblk3[0].genblk1[7].macUnit  |MACUnit_6                       |   173|
+|15    |          \genblk3[1].genblk1[0].macUnit  |MACUnit_7                       |   223|
+|16    |          \genblk3[1].genblk1[1].macUnit  |MACUnit_8                       |   188|
+|17    |          \genblk3[1].genblk1[2].macUnit  |MACUnit_9                       |   188|
+|18    |          \genblk3[1].genblk1[3].macUnit  |MACUnit_10                      |   188|
+|19    |          \genblk3[1].genblk1[4].macUnit  |MACUnit_11                      |   188|
+|20    |          \genblk3[1].genblk1[5].macUnit  |MACUnit_12                      |   188|
+|21    |          \genblk3[1].genblk1[6].macUnit  |MACUnit_13                      |   180|
+|22    |          \genblk3[1].genblk1[7].macUnit  |MACUnit_14                      |   145|
+|23    |          \genblk3[2].genblk1[0].macUnit  |MACUnit_15                      |   261|
+|24    |          \genblk3[2].genblk1[1].macUnit  |MACUnit_16                      |   226|
+|25    |          \genblk3[2].genblk1[2].macUnit  |MACUnit_17                      |   226|
+|26    |          \genblk3[2].genblk1[3].macUnit  |MACUnit_18                      |   226|
+|27    |          \genblk3[2].genblk1[4].macUnit  |MACUnit_19                      |   226|
+|28    |          \genblk3[2].genblk1[5].macUnit  |MACUnit_20                      |   226|
+|29    |          \genblk3[2].genblk1[6].macUnit  |MACUnit_21                      |   218|
+|30    |          \genblk3[2].genblk1[7].macUnit  |MACUnit_22                      |   183|
+|31    |          \genblk3[3].genblk1[0].macUnit  |MACUnit_23                      |   223|
+|32    |          \genblk3[3].genblk1[1].macUnit  |MACUnit_24                      |   188|
+|33    |          \genblk3[3].genblk1[2].macUnit  |MACUnit_25                      |   188|
+|34    |          \genblk3[3].genblk1[3].macUnit  |MACUnit_26                      |   188|
+|35    |          \genblk3[3].genblk1[4].macUnit  |MACUnit_27                      |   188|
+|36    |          \genblk3[3].genblk1[5].macUnit  |MACUnit_28                      |   188|
+|37    |          \genblk3[3].genblk1[6].macUnit  |MACUnit_29                      |   180|
+|38    |          \genblk3[3].genblk1[7].macUnit  |MACUnit_30                      |   145|
+|39    |          \genblk3[4].genblk1[0].macUnit  |MACUnit_31                      |   243|
+|40    |          \genblk3[4].genblk1[1].macUnit  |MACUnit_32                      |   208|
+|41    |          \genblk3[4].genblk1[2].macUnit  |MACUnit_33                      |   208|
+|42    |          \genblk3[4].genblk1[3].macUnit  |MACUnit_34                      |   208|
+|43    |          \genblk3[4].genblk1[4].macUnit  |MACUnit_35                      |   208|
+|44    |          \genblk3[4].genblk1[5].macUnit  |MACUnit_36                      |   208|
+|45    |          \genblk3[4].genblk1[6].macUnit  |MACUnit_37                      |   200|
+|46    |          \genblk3[4].genblk1[7].macUnit  |MACUnit_38                      |   165|
+|47    |          \genblk3[5].genblk1[0].macUnit  |MACUnit_39                      |   223|
+|48    |          \genblk3[5].genblk1[1].macUnit  |MACUnit_40                      |   188|
+|49    |          \genblk3[5].genblk1[2].macUnit  |MACUnit_41                      |   188|
+|50    |          \genblk3[5].genblk1[3].macUnit  |MACUnit_42                      |   188|
+|51    |          \genblk3[5].genblk1[4].macUnit  |MACUnit_43                      |   188|
+|52    |          \genblk3[5].genblk1[5].macUnit  |MACUnit_44                      |   188|
+|53    |          \genblk3[5].genblk1[6].macUnit  |MACUnit_45                      |   180|
+|54    |          \genblk3[5].genblk1[7].macUnit  |MACUnit_46                      |   145|
+|55    |          \genblk3[6].genblk1[0].macUnit  |MACUnit_47                      |   310|
+|56    |          \genblk3[6].genblk1[1].macUnit  |MACUnit_48                      |   237|
+|57    |          \genblk3[6].genblk1[2].macUnit  |MACUnit_49                      |   237|
+|58    |          \genblk3[6].genblk1[3].macUnit  |MACUnit_50                      |   237|
+|59    |          \genblk3[6].genblk1[4].macUnit  |MACUnit_51                      |   256|
+|60    |          \genblk3[6].genblk1[5].macUnit  |MACUnit_52                      |   237|
+|61    |          \genblk3[6].genblk1[6].macUnit  |MACUnit_53                      |   230|
+|62    |          \genblk3[6].genblk1[7].macUnit  |MACUnit_54                      |   194|
+|63    |          \genblk3[7].genblk1[0].macUnit  |MACUnit_55                      |    71|
+|64    |          \genblk3[7].genblk1[1].macUnit  |MACUnit_56                      |    63|
+|65    |          \genblk3[7].genblk1[2].macUnit  |MACUnit_57                      |    63|
+|66    |          \genblk3[7].genblk1[3].macUnit  |MACUnit_58                      |    63|
+|67    |          \genblk3[7].genblk1[4].macUnit  |MACUnit_59                      |    63|
+|68    |          \genblk3[7].genblk1[5].macUnit  |MACUnit_60                      |    63|
+|69    |          \genblk3[7].genblk1[6].macUnit  |MACUnit_61                      |    55|
+|70    |          \genblk3[7].genblk1[7].macUnit  |MACUnit_62                      |    20|
++------+------------------------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 63 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2066.707 ; gain = 1547.328
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.352 . Memory (MB): peak = 2096.594 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1342 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2219.367 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 180 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 179 instances
+
+Synth Design complete | Checksum: db998f7d
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 2219.367 ; gain = 1699.988
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.044 . Memory (MB): peak = 2219.367 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Admin/ip_repo/edit_dpu_axi_v1_0.runs/synth_1/dpu_axi.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file dpu_axi_utilization_synth.rpt -pb dpu_axi_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 20 23:00:59 2026...
