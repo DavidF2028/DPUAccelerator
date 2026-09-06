@@ -579,7 +579,7 @@ This would allow substantially larger tensors to be processed without requiring 
 The accelerator was integrated with the Zynq UltraScale+ processing
 system using AXI, dual-port BRAM, and a custom AXI control peripheral.
 
-![Vivado Block Design](docs/vivado_block_design.png)
+![Vivado Block Design](docs/DPUBlockDiagram.PNG)
 
 ### RTL Simulation
 
@@ -605,3 +605,7 @@ Vivado synthesis and implementation reports were used to evaluate the
 FPGA resources required by the accelerator.
 
 ![Vivado Resource Utilization](docs/utilization.png)
+
+### Implemented Design
+
+![Implemented Design](docs/ImplementedDPUDesign.PNG)
