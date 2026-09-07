@@ -589,15 +589,20 @@ and control timing across the array.
 
 ![Questa Simulation](docs/questa_waveform.png)
 
-### Hardware Validation
+### Hardware Bring-Up
 
-The SoC-integrated design was programmed onto the FPGA and tested using
-bare-metal software running on the Cortex-A53.
+The SoC-integrated design was programmed and tested on the target
+Zynq UltraScale+ platform during development.
 
-A minimal hardware test was used to verify the end-to-end datapath from
-the processor through BRAM and the DPU and back to the processor.
+Processor-to-BRAM communication, accelerator control/status, and a
+single MAC datapath were validated on physical hardware. During
+bring-up, a BRAM timing issue initially caused a 1×1 MAC test to
+accumulate twice. After correcting the read/compute timing, the test
+produced the expected result.
 
-![Hardware Test Result](docs/hardware_result.png)
+Full 8×8 hardware validation was not completed before the end of the
+development period. The remaining investigation focused on the
+multi-lane BRAM-to-DPU datapath.
 
 ### FPGA Resource Utilization
 
