@@ -1,19 +1,19 @@
+/*
+This was a simple test driver for the DPU and AXI/BRAM interfaces. This is just for validation and debugging not actual usage.
+*/
+
 #include "xparameters.h"
 #include "xil_io.h"
 #include "xil_types.h"
 
-// ---------------------------------------------------------
 // Hardware addresses from xparameters.h
-// ---------------------------------------------------------
 
 #define DPU_BASE       XPAR_DPU_AXI_0_BASEADDR
 #define INPUT_BASE     XPAR_INPUT_BRAM_CTRL_BASEADDR
 #define OUTPUT_BASE    XPAR_OUT_BRAM_CTRL_BASEADDR
 #define WEIGHT_BASE    XPAR_WEIGHT_BRAM_CTRL_BASEADDR
 
-// ---------------------------------------------------------
 // DPU AXI register map
-// ---------------------------------------------------------
 
 #define DPU_CONTROL_OFFSET   0x00
 #define DPU_STATUS_OFFSET    0x04
@@ -25,9 +25,7 @@
 
 #define DPU_ACT_SHIFT        3
 
-// ---------------------------------------------------------
 // Simple BRAM read/write test
-// ---------------------------------------------------------
 
 static int test_bram(UINTPTR base)
 {
@@ -60,9 +58,7 @@ int main()
     volatile u32 status;
     int result;
 
-    // -----------------------------------------------------
     // 1. Input BRAM
-    // -----------------------------------------------------
 
     result = test_bram(INPUT_BASE);
 
@@ -72,9 +68,7 @@ int main()
         while (1);
     }
 
-    // -----------------------------------------------------
     // 2. Weight BRAM
-    // -----------------------------------------------------
 
     result = test_bram(WEIGHT_BASE);
 
@@ -84,9 +78,7 @@ int main()
         while (1);
     }
 
-    // -----------------------------------------------------
     // 3. Output BRAM
-    // -----------------------------------------------------
 
     result = test_bram(OUTPUT_BASE);
 
@@ -96,21 +88,16 @@ int main()
         while (1);
     }
 
-    // -----------------------------------------------------
     // 4. Read initial DPU status
-    // -----------------------------------------------------
 
     status = Xil_In32(DPU_BASE + DPU_STATUS_OFFSET);
 
     // Ideally:
     // busy = 0
     // done = 0
-    //
     // Inspect "status" in the Vitis debugger.
 
-    // -----------------------------------------------------
     // 5. Select activation mode 0
-    // -----------------------------------------------------
 
     u32 control = (0U << DPU_ACT_SHIFT);
 
@@ -129,30 +116,13 @@ int main()
         while (1);
     }
 
-    // -----------------------------------------------------
-    // 6. Pulse START
-    // -----------------------------------------------------
-
+    // 6. Start DPU
     Xil_Out32(
         DPU_BASE + DPU_CONTROL_OFFSET,
         control | DPU_START_MASK
     );
 
-    // Keep start asserted briefly through a few AXI accesses
-    status = Xil_In32(DPU_BASE + DPU_STATUS_OFFSET);
-
-    // Deassert start
-    Xil_Out32(
-        DPU_BASE + DPU_CONTROL_OFFSET,
-        control
-    );
-
-    // -----------------------------------------------------
-    // 7. Poll status
-    //
-    // This is intentionally bounded so a hardware problem
-    // does not hang the CPU forever.
-    // -----------------------------------------------------
+    // 7. Poll status - intentionally bounded so CPU isn't stuck
 
     const u32 TIMEOUT = 10000000U;
 
@@ -177,16 +147,12 @@ int main()
         while (1);
     }
 
-    // -----------------------------------------------------
     // 8. Read a few output BRAM locations
-    // -----------------------------------------------------
 
     volatile u32 output0 = Xil_In32(OUTPUT_BASE + 0x00);
     volatile u32 output1 = Xil_In32(OUTPUT_BASE + 0x04);
     volatile u32 output2 = Xil_In32(OUTPUT_BASE + 0x08);
     volatile u32 output3 = Xil_In32(OUTPUT_BASE + 0x0C);
-
-    // Put breakpoint here and inspect output0-output3.
 
     while (1)
     {

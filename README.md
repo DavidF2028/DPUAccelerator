@@ -477,6 +477,30 @@ Further work should focus on:
 
 The repository intentionally distinguishes between simulation-verified functionality and functionality that has been demonstrated on physical FPGA hardware.
 
+### Current Hardware Failure Behavior
+
+The SoC-integrated DPU currently exhibits the following reproducible behavior:
+
+- Standalone DPU RTL simulation operates correctly.
+- The generated SoC bitstream successfully programs the FPGA.
+- Basic single-MAC hardware validation succeeds.
+- BRAM-to-DPU communication has been demonstrated.
+- The first hardware computation can execute successfully.
+- Failure occurs when progressing to subsequent/multi-lane propagation/feed operations.
+- The issue is therefore currently localized to the multi-lane BRAM-to-systolic-array data path rather than the basic DPU compute function.
+
+Timing closure has been achieved for the implemented design. Current investigation should therefore prioritize:
+
+- BRAM read latency and data-valid alignment;
+- address sequencing across operand lanes;
+- synchronization between BRAM reads and systolic-array enable;
+- lane-to-lane cycle alignment;
+- buffer contents between successive operations;
+- AXI/BRAM read/write behavior;
+- comparison of integrated RTL waveforms against the standalone reference simulation.
+
+The exact root cause of the multi-lane hardware failure has not yet been determined.
+
 ---
 
 ## Repository Structure
