@@ -1,12 +1,17 @@
-# FPGA Systolic-Array ML Accelerator
+# FPGA Systolic-Array Deep Learning Processing Unit (DPU) Accelerator
 
 A synthesizable machine-learning accelerator built around a parameterizable systolic multiply-accumulate (MAC) array and implemented in SystemVerilog.
 
-The project targets the AMD/Xilinx Zynq UltraScale+ MPSoC and explores hardware/software co-design for matrix-multiplication workloads. The accelerator was developed first as a standalone RTL design and later integrated with the Zynq processing system using AXI and dual-port Block RAM (BRAM).
+### Target Platform
+
+- Board: AMD/Xilinx AUP-ZU3
+- Device: Zynq UltraScale+ MPSoC
+- Processing System: ARM Cortex-A53
+- Programmable Logic: Custom SystemVerilog DPU
 
 The current implementation uses an **8×8 systolic array containing 64 parallel MAC processing elements (PEs)** with signed 8-bit operands.
 
-> **Development status:** The standalone compute architecture has been verified in RTL simulation. The SoC implementation has been synthesized, implemented, programmed, and partially validated on physical FPGA hardware. AXI/BRAM communication, accelerator control, and a single MAC datapath have been demonstrated in hardware. Full 8×8 hardware validation is still in progress; see [Current Status](#current-status).
+ **Development status:** The standalone compute architecture has been verified in RTL simulation. The SoC implementation has been synthesized, implemented, programmed, and partially validated on physical FPGA hardware. AXI/BRAM communication, accelerator control, and a single MAC datapath have been demonstrated in hardware. Full 8×8 hardware validation is still in progress; see [Current Status](#current-status).
 
 ---
 
@@ -118,7 +123,7 @@ The current configuration uses:
 | Weight datapath | 64 bits |
 | Peak parallelism | 64 MACs/cycle |
 
-The RTL is parameterized so that array and datapath dimensions can be modified without manually instantiating individual processing elements.
+The systolic array is parameterized so that array and datapath dimensions can be modified without manually instantiating individual processing elements.
 
 For the current 8×8 controller, the systolic feed/drain schedule uses:
 
@@ -188,6 +193,33 @@ The SoC-oriented top level handles:
 - output serialization
 - output BRAM writes
 - `busy` / `done` status generation
+
+---
+
+## Control Interface
+
+The DPU is controlled through the custom AXI peripheral.
+
+| Offset | Register | Bits | Description |
+|---:|---|---:|---|
+| `0x00` | CONTROL | `[0]` | START |
+| `0x00` | CONTROL | `[5:3]` | Activation select |
+| `0x04` | STATUS | `[0]` | BUSY |
+| `0x04` | STATUS | `[1]` | DONE |
+
+### Activation Select
+
+| Value | Activation |
+|---:|---|
+| `0` | None / bypass |
+| `1` | ReLU |
+| `2` | Leaky ReLU |
+
+### Start Protocol
+
+The START bit should remain asserted during computation.
+The processor polls the STATUS register until DONE is asserted,
+then deasserts START.
 
 ---
 
@@ -310,24 +342,6 @@ The software driver performs:
 
 ---
 
-## Activation Functions
-
-An activation stage follows the systolic compute core.
-
-The current implementation supports:
-
-```text
-0 → Bypass / None
-1 → ReLU
-2 → Leaky ReLU
-```
-
-The activation selection occurs at runtime rather than synthesizing a different accelerator for each activation function.
-
-The activation logic operates across the output array in parallel.
-
----
-
 ## Verification
 
 ### RTL Simulation
@@ -343,6 +357,25 @@ Simulation was used to inspect:
 - array behavior.
 
 The standalone RTL implementation provides the primary simulation reference for the compute architecture.
+
+## Results
+
+### Matrix Outputs
+
+#### No Activation
+![Matrix output without activation](docs/OutputMatrixNone.png)
+
+#### ReLU
+![Matrix output with ReLU](docs/OutMatrixReLU.png)
+
+#### Leaky ReLU
+![Matrix output with Leaky ReLU](docs/LeakyReLUMatrix.png)
+
+### Vivado Implementation
+
+![Vivado Block Design](docs/DPUBlockDiagram.PNG)
+
+![Implemented DPU Design](docs/ImplementedDPUDesign.PNG)
 
 ### FPGA Implementation
 
@@ -509,46 +542,46 @@ The repository separates the standalone accelerator from the SoC-integrated impl
 
 ```text
 .
+├── docs/
+├── SoC/
+│   ├── artifacts/
+│   ├── ip_repo/
+│   ├── block_design.tcl
+│   ├── initboard.tcl
+│   ├── psu_init.tcl
+│   └── testDriver.cpp
 ├── standalone/
-│   ├── rtl/
+│   ├── src/
+│   │   ├── ActivationSelect.sv
 │   │   ├── DPU_Top.sv
-│   │   ├── DPUCore.sv
+│   │   ├── DpuCore.sv
 │   │   ├── MACArray.sv
 │   │   ├── PEUnit.sv
-│   │   └── ActivationSelect.sv
-│   │
+│   │   └── tb_DPU_Top.sv
 │   └── sim/
-│       └── ...
-│
-├── soc/
-│   ├── rtl/
-│   │   └── ...
-│   │
-│   ├── ip_repo/
-│   │   └── dpu_axi_1.0/
-│   │       ├── component.xml
-│   │       ├── hdl/
-│   │       └── xgui/
-│   │
-│   ├── software/
-│   │   └── testDriver.cpp
-│   │
-│   ├── block_design.tcl
-│   │
-│   └── constraints/
-│       └── ...
-│
-├── docs/
-│   └── ...
-│
+│       └── compile.do
 └── README.md
 ```
 
 The `standalone/` implementation represents the core accelerator development and simulation environment.
 
-The `soc/` implementation contains the modifications required for BRAM/AXI integration with the Zynq processing system.
+The `SoC/` implementation contains the modifications required for BRAM/AXI integration with the Zynq processing system.
 
 ---
+
+## Quick Start
+
+### Standalone Simulation
+
+The standalone DPU can be simulated using Questa.
+
+1. Open Questa.
+2. Navigate to `standalone/sim/`.
+3. Run:
+
+```text
+do compile.do
+```
 
 ## Development Tools
 
@@ -595,46 +628,3 @@ Systolic DPU
 This would allow substantially larger tensors to be processed without requiring the processor to explicitly transfer every accelerator data block.
 
 ---
-
-## Implementation
-
-### Vivado Block Design
-
-The accelerator was integrated with the Zynq UltraScale+ processing
-system using AXI, dual-port BRAM, and a custom AXI control peripheral.
-
-![Vivado Block Design](docs/DPUBlockDiagram.PNG)
-
-### RTL Simulation
-
-The standalone systolic-array implementation was verified using Questa.
-Simulation was used to inspect operand propagation, MAC accumulation,
-and control timing across the array.
-
-![Questa Simulation](docs/questa_waveform.png)
-
-### Hardware Bring-Up
-
-The SoC-integrated design was programmed and tested on the target
-Zynq UltraScale+ platform during development.
-
-Processor-to-BRAM communication, accelerator control/status, and a
-single MAC datapath were validated on physical hardware. During
-bring-up, a BRAM timing issue initially caused a 1×1 MAC test to
-accumulate twice. After correcting the read/compute timing, the test
-produced the expected result.
-
-Full 8×8 hardware validation was not completed before the end of the
-development period. The remaining investigation focused on the
-multi-lane BRAM-to-DPU datapath.
-
-### FPGA Resource Utilization
-
-Vivado synthesis and implementation reports were used to evaluate the
-FPGA resources required by the accelerator.
-
-![Vivado Resource Utilization](docs/utilization.png)
-
-### Implemented Design
-
-![Implemented Design](docs/ImplementedDPUDesign.PNG)
